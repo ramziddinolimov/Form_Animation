@@ -9,7 +9,7 @@ function animatedForm() {
 
             // Check for validation
             if(input.type === "text" && validateUser(input)) {
-                console.log("everything is okay!");
+                nextSlide(parent, nextForm)
             }
         })
     })
@@ -24,6 +24,15 @@ function validateUser (user) {
         return true
     }
 }
+
+
+function nextSlide(parent, nextForm){
+    parent.classList.add("innactive")
+    parent.classList.remove("active")
+    nextForm.classList.add("active")
+}
+
+
 
 function error(color) {
     document.body.style.backgroundColor = color
